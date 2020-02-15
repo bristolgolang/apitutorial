@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"strings"
 	"time"
@@ -11,6 +12,7 @@ import (
 var client *http.Client
 
 const host = "https://quote-garden.herokuapp.com/quotes"
+const port = "8080"
 
 // Quotes is the response type from a search
 type Quotes struct {
@@ -36,7 +38,9 @@ func main() {
 	client.Timeout = 10 * time.Second // set a timeout limit of 10 seconds
 	http.HandleFunc("/quotes/random", getRandomQuote)
 	http.HandleFunc("/quotes/search/", getSearchQuote)
-	http.ListenAndServe(":8080", nil)
+	addr := fmt.Sprintf(":%s", port)
+	log.Printf("running on address: %s", addr)
+	http.ListenAndServe(addr, nil)
 }
 
 // getRandomQuote gets a random quote from our source

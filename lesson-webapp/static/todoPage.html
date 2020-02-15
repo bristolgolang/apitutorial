@@ -1,0 +1,10 @@
+<h1>{{.Title}}</h1>
+<ul>
+    {{range .Items}}
+        {{if .Done}}
+            <li><del>{{.Title}}</del></li>
+        {{else}}
+            <li>{{.Title}}</li>
+        {{end}}
+    {{end}}
+</ul>
