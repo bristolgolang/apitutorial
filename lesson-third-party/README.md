@@ -1,5 +1,19 @@
 # Calling third party APIs
 
+## How to run
+
+To run from the root of this repository;
+
+```sh
+go run lesson-third-party/main.go
+```
+
+then from a different terminal session (or program like postman)
+
+```sh
+curl localhost:8080/quotes/search/oneself
+```
+
 ## Do it yourself
 
 A few alternative APIs to challenge yourself;
