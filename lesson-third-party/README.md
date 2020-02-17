@@ -58,6 +58,3 @@ For quickly creating the structs, mholt has a fantastic resource called [json=to
 
 If all goes well, we can just use `w.Write` to write a slice of bytes out, in the example here we're created a `String` function that prints out the quote in a nice plain text format.
 
-## Further Reading
-
-- 
