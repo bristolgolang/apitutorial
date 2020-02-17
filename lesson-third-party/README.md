@@ -12,6 +12,7 @@ then from a different terminal session (or program like postman)
 
 ```sh
 curl localhost:8080/quotes/search/oneself
+curl localhost:8080/quotes/random
 ```
 
 ## Do it yourself
@@ -31,22 +32,7 @@ Try implementing your own functionality, for example;
 - combine multiple requests, i.e. take a quote and use a sentiment analysis on it
 - return a json object instead of plain text
 
-## Running the example
-
-To run the server, from this directory run;
-
-```sh
-go run main.go
-```
-
-then make requests like
-
-```sh
-curl localhost:8080/quotes/search/oneself
-curl localhost:8080/quotes/random
-```
-
-## Walkthrough
+## How it works
 
 This section aims to walkthrough what is happening in this API.
 
@@ -71,3 +57,7 @@ For quickly creating the structs, mholt has a fantastic resource called [json=to
 ### Responding to the caller
 
 If all goes well, we can just use `w.Write` to write a slice of bytes out, in the example here we're created a `String` function that prints out the quote in a nice plain text format.
+
+## Further Reading
+
+- 

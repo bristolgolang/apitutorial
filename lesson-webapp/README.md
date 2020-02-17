@@ -14,11 +14,11 @@ go run lesson-webapp/main.go
 
 Visit either `localhost:8080/quote` or `localhost:8080/todo` in your web browser
 
-## Overview
+## How it works
 
 How this application works in a nutshell is loading some html files with basic templating (similar to jinja 2, or other frameworks) into memory, having a router accept a path, create a data structure, render the template with the given data.
 
-## [html/template](https://golang.org/pkg/html/template/)
+### [html/template](https://golang.org/pkg/html/template/)
 
 A Go html template is a data driven html page. There's a lot of different formating actions available here, including for loops, conditionals. These are all based on, and better documented within the [text/template](https://golang.org/pkg/text/template/#hdr-Actions) package.
 
@@ -28,7 +28,7 @@ Exploring the formatting directives on our quotes page we can see an example of 
 
 The todopage is a little more interesting in that we range over `.Items`, which means our top level struct has to have an array called `Items`. Within the block of code inside of `range`, the value of `.` becomes an individual element within the `Items` slice.
 
-## Creating the data
+### Creating the data
 
 At the top of our `main.go` file we have structs that map to the directives within our template files. Looking out our `todoPage` func, we create a struct of our `TodoPageData` type, which we pass straight into our template using the [Execute](https://golang.org/pkg/text/template/#hdr-Actions) function.
 

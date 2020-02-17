@@ -50,7 +50,7 @@ After that we [marshal](https://golang.org/pkg/encoding/json/#Marshal) the data,
 In the get, we call our datastores List function, again marshal it and write out the bytes to our `ResponseWriter`.
 The `randomQuote` function behaves similarly; calling datastores Random and marshalling it.
 
-## The memory file
+### The memory file
 
 The entry point here is the `NewMemoryStore()` function, it takes no arguments and returns a `memory` struct.
 The `memory` struct contains a map of strings to `Quotes`, allowing us to store a lookup from IDs to Quotes.
@@ -67,3 +67,9 @@ The `List` function iterates through the map returning it as a list.
 - Try implementing a datastore using local file storage using the [ioutil](https://golang.org/pkg/io/ioutil/), and [os](https://golang.org/pkg/os/)
 - Try implementing a datastore using a database using the [sql](https://golang.org/pkg/database/sql/) packages (drivers need to be imported separately).
 
+## Further Reading
+
+- A curated list of [database drivers](https://github.com/golang/go/wiki/SQLDrivers)
+- Examples of [how to use a database](https://github.com/golang/go/wiki/SQLInterface)
+- Mat Ryers talk on [how to create HTTP services](https://medium.com/statuscode/how-i-write-go-http-services-after-seven-years-37c208122831)
+-
