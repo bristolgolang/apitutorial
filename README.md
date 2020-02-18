@@ -30,6 +30,10 @@ This lesson aims to teach how to write webapps, to render HTML pages using a Go 
 
 This lesson aims to teach how to write APIs that need to work with storage; in memory, file storage, databases, or anything else. It's recommended to understand [serialising/deserialising](https://golang.org/pkg/encoding/json/), which is discussed in the third party API lessons.
 
+### [Lesson - httptest](./lesson-httptest/README.md)
+
+This lesson explores the ways in which we can test our http server.
+
 ## Further reading
 
 - [Writing Web Applications](https://golang.org/doc/articles/wiki/) on the golang docs.
