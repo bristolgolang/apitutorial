@@ -28,6 +28,16 @@ Exploring the formatting directives on our quotes page we can see an example of 
 
 The todopage is a little more interesting in that we range over `.Items`, which means our top level struct has to have an array called `Items`. Within the block of code inside of `range`, the value of `.` becomes an individual element within the `Items` slice.
 
+### [go:embed](https://golang.org/doc/go1.16#library-embed)
+
+We use the go:embed directive to embed the html files into the Go binary. At it's core, you'll see we have the following two lines;
+```go
+//go:embed static/*
+var staticFiles embed.FS
+```
+
+The comment above the code is actually a required directive to the compiler to include the files within the `static` directory under the variable `staticFiles`. We then use the `template.ParseFS` function from the `template` package to parse the embedded files as templates as described earlier.
+
 ### Creating the data
 
 At the top of our `main.go` file we have structs that map to the directives within our template files. Looking out our `todoPage` func, we create a struct of our `TodoPageData` type, which we pass straight into our template using the [Execute](https://golang.org/pkg/text/template/#hdr-Actions) function.
@@ -43,5 +53,6 @@ A more interesting example is the `quote` function which creates an array of quo
 ## Further Reading
 
 - [buffalo](https://github.com/gobuffalo/buffalo) - A Go web development eco-system, designed to make your project easier.
-- [hugo](https://gohugo.io/) - The world’s fastest framework for building websites
-- [gopheracadamy](https://blog.gopheracademy.com/advent-2017/using-go-templates/) - A lengthier tutorial
+- [hugo](https://gohugo.io/) - The world’s fastest framework for building websites.
+- [gopheracadamy](https://blog.gopheracademy.com/advent-2017/using-go-templates/) - A lengthier tutorial.
+- [go:embed](https://blog.carlmjohnson.net/post/2021/how-to-use-go-embed/) - A blog going into more depth on embed usage.
