@@ -34,6 +34,10 @@ This lesson aims to teach how to write APIs that need to work with storage; in m
 
 This lesson explores the ways in which we can test our http server.
 
+### [Lesson - middleware](./lesson-middleware/README.md)
+
+This lesson explores the ways in which we can add middleware to our http server.
+
 ## Further reading
 
 - [Writing Web Applications](https://golang.org/doc/articles/wiki/) on the golang docs.
