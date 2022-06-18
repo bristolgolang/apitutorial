@@ -10,6 +10,13 @@ To run in a terminal
 go run main.go
 ```
 
+then from a different terminal session (or program like postman)
+
+```sh
+curl localhost:8080
+curl localhost:8080/auth
+```
+
 ## What is middleware?
 
 Middleware is the act of wrapping a http endpoint such that you can log out data, authorise users, protect against panics, record metrics, anything really.
@@ -90,7 +97,18 @@ func helloWorld(w http.ResponseWriter, r *http.Request) {
 - Try adding a panic middleware that catches panics and logs them.
 - Try adding tests to one of your middlewares.
 
+## Closing thoughts
+
+This pattern is universal, as in it crosses languages, protocols, etc.
+It's a good pattern to learn.
+
 ## Further Reading
 
 - [Alex Edwards - making and using middleware](https://www.alexedwards.net/blog/making-and-using-middleware)
 - [Mat Ryer - Writing middleware in #golang](https://medium.com/@matryer/writing-middleware-in-golang-and-how-go-makes-it-so-much-fun-4375c1246e81)
+
+Other projects to look at
+
+- [alice](https://github.com/justinas/alice)
+- [gRPC middleware](https://github.com/grpc-ecosystem/go-grpc-middleware)
+
