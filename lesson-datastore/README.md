@@ -6,7 +6,7 @@
 From the root directory of this repository;
 
 ```sh
-go run lesson-datastore/*.go
+go run *.go
 ```
 
 This command is a little different to run, as we need Go to read all the files within this directory, we've split this into multiple files for simplicity.
